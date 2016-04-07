@@ -51,6 +51,46 @@ session = DBSession()
 def testHomePage():
 	return render_template('home.html')
 
+# @app.route('/')
+# @app.route('/home/')
+# def showPeriods():
+# 	if 'email' not in login_session:
+# 		# User is not signed in.
+# 		return render_template('public.html')
+# 	user = session.query(User).filter_by(email=login_session['email']).first()
+# 	if user is None:
+# 		# This is a rare case when user is deleted while still in session.
+# 		output = 'The page doesn\'t exist or you are not authorized to access it.'
+# 		return output
+# 	periods = session.query(Period).filter_by(user_id=user.id).order_by(Period.id.desc())
+# 	return render_template('home.html', items=periods, username=user.name)
+
+# @app.route('/period/new/', methods=['GET','POST'])
+# @login_required
+# def newPeriod():
+# 	user = session.query(User).filter_by(email=login_session['email']).first()
+# 	periods = session.query(Period).filter_by(user_id=user.id).order_by(Period.id.desc())
+# 	if request.method == 'GET':
+# 		return render_template('period_new.html',periods=periods)
+# 	# Get data from POST request, stripping any leading/trailing white spaces:
+# 	period_name = request.form['period_name'].strip()
+# 	# Check if value not empty:
+# 	if not period_name:
+# 		flash('Please enter period name')
+# 		return render_template('period_new.html',periods=periods)
+# 	# Check if length is reasonable (between 2 and 25 chars):
+# 	if len(period_name)>25:
+# 		flash('Period name appears too long - try to keep things short and sweet')
+# 		return render_template('period_new.html',periods=periods)
+# 	if len(period_name)<3:
+# 		flash('Period name appears too short - let\'s be more serious')
+# 		return render_template('period_new.html',periods=periods)
+# 	# Validation passed. Add period to the database:
+# 	newPeriod = Period(name=period_name, user_id=user.id) 
+# 	session.add(newPeriod)
+# 	session.commit()
+# 	flash('New period created')
+# 	return redirect(url_for('showBudget',period_id=newPeriod.id))
 
 # ---- This is old code. Keep it here for reference ----
 
