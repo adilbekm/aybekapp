@@ -29,49 +29,55 @@ Base = declarative_base()
 # the child object should follow along with its parent in all cases,
 # and be deleted once it is no longer associated with the parent
 
-class User(Base):
-	__tablename__ = 'user'
+class Word(Base):
+	__tablename__ = 'word'
 	id = Column(Integer, primary_key=True)
-	name = Column(String(250), nullable=False)
-	password = Column(String(64), nullable=False)
-	salt = Column(String(45), nullable=False)
-	email = Column(String(250), nullable=False)
-	periods = relationship('Period', cascade='all, delete-orphan')
+	word = Column(String(250), nullable=False)
+	definition = Column(String(250), nullable=False)
 
-	def check_password(self, password):
-		salted_password = self.salt + password
-		hashed_password = sha256(salted_password).hexdigest()
-		if self.password == hashed_password:
-			return True
-		else:
-			return False
+# class User(Base):
+# 	__tablename__ = 'user'
+# 	id = Column(Integer, primary_key=True)
+# 	name = Column(String(250), nullable=False)
+# 	password = Column(String(64), nullable=False)
+# 	salt = Column(String(45), nullable=False)
+# 	email = Column(String(250), nullable=False)
+# 	periods = relationship('Period', cascade='all, delete-orphan')
 
-class Period(Base):
-	__tablename__ = 'period'
-	id = Column(Integer, primary_key=True) 
-	user_id = Column(Integer, ForeignKey('user.id'))
-	name = Column(String(50), nullable=False)
-	budgets = relationship('Budget', cascade='all, delete-orphan')
+# 	def check_password(self, password):
+# 		salted_password = self.salt + password
+# 		hashed_password = sha256(salted_password).hexdigest()
+# 		if self.password == hashed_password:
+# 			return True
+# 		else:
+# 			return False
 
-class Budget(Base):
-	__tablename__ = 'budget'
-	id = Column(Integer, primary_key=True)
-	period_id = Column(Integer, ForeignKey('period.id'))
-	name = Column(String(100), nullable=False)
-	budget_amount = Column(Integer)
-	actual_amount = Column(Integer)
+# class Period(Base):
+# 	__tablename__ = 'period'
+# 	id = Column(Integer, primary_key=True) 
+# 	user_id = Column(Integer, ForeignKey('user.id'))
+# 	name = Column(String(50), nullable=False)
+# 	budgets = relationship('Budget', cascade='all, delete-orphan')
 
-	@property
-	def serialize(self):
-		# returns object data in easily serializable format
-		return {
-			'item_name': self.name,
-			'budget_amount': self.budget_amount,
-			'actual_amount': self.actual_amount,
-		}
+# class Budget(Base):
+# 	__tablename__ = 'budget'
+# 	id = Column(Integer, primary_key=True)
+# 	period_id = Column(Integer, ForeignKey('period.id'))
+# 	name = Column(String(100), nullable=False)
+# 	budget_amount = Column(Integer)
+# 	actual_amount = Column(Integer)
+
+# 	@property
+# 	def serialize(self):
+# 		# returns object data in easily serializable format
+# 		return {
+# 			'item_name': self.name,
+# 			'budget_amount': self.budget_amount,
+# 			'actual_amount': self.actual_amount,
+# 		}
 
 # CONFIGURATION # # # # # # # # # # # # # # # # # # # # # # # # # #
 # To establish lazy connection to the database:
-engine = create_engine('postgresql://catalog:catalog@localhost/personalbudget')
+engine = create_engine('postgresql://aybek:aybek@localhost/vocabulary')
 # To create tables in the database if they don't exist yet:
 Base.metadata.create_all(engine)

@@ -26,7 +26,7 @@ from functools import wraps
 from hashlib import sha256
 
 # Needed to perform CRUD operations with the database:
-from database_setup import engine, Base, User, Period, Budget
+from database_setup import engine, Base, Word
 from sqlalchemy.orm import sessionmaker
 # Func is needed for aggregations (sum, avg, max, etc.):
 from sqlalchemy.sql import func
