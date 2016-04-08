@@ -57,6 +57,14 @@ def addWord():
 		return render_template('addword.html')
 	return render_template('home.html')
 
+@app.route('/listwords/')
+def listWords():
+	return render_template('listwords.html')
+
+@app.route('/testwords/')
+def testWords():
+	return render_template('testwords.html')
+
 
 # @app.route('/')
 # @app.route('/home/')
