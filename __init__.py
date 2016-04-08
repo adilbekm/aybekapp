@@ -48,7 +48,7 @@ session = DBSession()
 
 @app.route('/')
 @app.route('/home/')
-def testHomePage():
+def home():
 	return render_template('home.html')
 
 @app.route('/newword/', methods=['GET','POST'])
