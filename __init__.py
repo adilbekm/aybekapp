@@ -51,6 +51,13 @@ session = DBSession()
 def testHomePage():
 	return render_template('home.html')
 
+@app.route('/newword/', methods=['GET','POST'])
+def addWord():
+	if request.method == 'GET':
+		return render_template('addword.html')
+	return render_template('home.html')
+
+
 # @app.route('/')
 # @app.route('/home/')
 # def showPeriods():
