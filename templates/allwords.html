@@ -7,6 +7,11 @@
 </head>
 <body>
 	<p>Page for listing all words.</p>
+	{% for word in words %}
+	<ul>
+		<li>{{word.word}}: {{word.definition}}</li>
+	</ul>
+	{% endfor %}
 	<p><a href='{{url_for('home')}}'>Home</a></p>
 </body>
 </html>

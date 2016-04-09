@@ -54,12 +54,25 @@ def home():
 @app.route('/newword/', methods=['GET','POST'])
 def addWord():
 	if request.method == 'GET':
-		return render_template('addword.html')
+		return render_template('newword.html')
+	# Get data from POST request, stripping any leading/trailing white spaces:
+	word = request.form['word'].strip()
+	definition = request.form['definition'].strip()
+	# Check if values are empty:
+	if not word: 
+		return render_template('newword.html')
+	if not definition:
+		return render_template('newword.html')
+	# Add more validations here later. 
+	newWord = Word(word=word, definition=definition)
+	session.add(newWord)
+	session.commit()
 	return render_template('home.html')
 
-@app.route('/listwords/')
-def listWords():
-	return render_template('listwords.html')
+@app.route('/allwords/')
+def allWords():
+	words = session.query(Word).order_by(Word.id.desc()).all()
+	return render_template('allwords.html', words=words)
 
 @app.route('/testwords/')
 def testWords():
