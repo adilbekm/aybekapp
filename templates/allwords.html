@@ -8,8 +8,8 @@
 <body>
 	<p>Page for listing all words.</p>
 	{% for word in words %}
-	<ul>
-		<li>{{word.word}}: {{word.definition}}</li>
+	<ul class="wordListing">
+		<li><a href='{{url_for('editWord',word_id=word.id)}}'><span style="font-weight:bold">{{word.word}}:</span> {{word.definition}}</li></a>
 	</ul>
 	{% endfor %}
 	<p><a href='{{url_for('home')}}'>Home</a></p>

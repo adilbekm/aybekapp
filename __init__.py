@@ -78,6 +78,34 @@ def allWords():
 def testWords():
 	return render_template('testwords.html')
 
+@app.route('/allwords/<int:word_id>/edit/', methods=['GET','POST'])
+def editWord(word_id):
+	word_object = session.query(Word).filter_by(id=word_id).first()
+	word = word_object.word
+	definition = word_object.definition
+	if request.method == 'GET':
+		return render_template('editword.html', word_id=word_id, word=word, definition=definition)
+	# Get data from POST request, stripping any leading/trailing white spaces:
+	new_word = request.form['word'].strip()
+	new_definition = request.form['definition'].strip()
+	# Check if values are empty:
+	if not new_word: 
+		return render_template('newword.html')
+	if not new_definition:
+		return render_template('newword.html')
+	# Add more validations here later. 
+	word_object.word = new_word
+	word_object.definition = new_definition
+	session.add(word_object)
+	session.commit()
+	return render_template('home.html')
+
+@app.route('/allwords/<int:word_id>/delete/')
+def deleteWord(word_id):
+	word_object = session.query(Word).filter_by(id=word_id).first()
+	session.delete(word_object)
+	session.commit()
+	return redirect(url_for('allWords'))
 
 # @app.route('/')
 # @app.route('/home/')

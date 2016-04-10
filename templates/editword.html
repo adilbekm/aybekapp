@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aybek Words</title>
+	<link rel='stylesheet' type='text/css' href='{{url_for('static', filename='styles.css')}}'>
+</head>
+<body>
+	<p>Page for editing an existing word.</p>
+	
+	<form method='POST' action ='.'>
+	<input type='text' name='word' value='{{word}}' size='25'><br>
+	<input type='text' name='definition' value='{{definition}}' size='25'><br>
+	<input type='submit' value='Save'>
+	</form>
+	
+	<p><a href='{{url_for('deleteWord',word_id=word_id)}}'>Delete This Entry</a></p>
+	<p><a href='{{url_for('allWords')}}'>Cancel</a></p>
+</body>
+</html>

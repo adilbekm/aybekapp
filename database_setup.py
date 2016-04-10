@@ -34,6 +34,7 @@ class Word(Base):
 	id = Column(Integer, primary_key=True)
 	word = Column(String(250), nullable=False)
 	definition = Column(String(250), nullable=False)
+	#entry_date = Column(DateTime, nullable=False)
 
 # class User(Base):
 # 	__tablename__ = 'user'
