@@ -4,6 +4,9 @@ from BaseHTTPServer import BaseHTTPRequestHandler, HTTPServer
 # It will be used for generating salt (for password hashing).
 from os import urandom
 
+# Import datetime module to be used to record current date/time:
+from datetime import datetime, date, timedelta
+
 # Imports and other code needed for Google Plus sign-in:
 import random, string
 #from oauth2client.client import flow_from_clientsecrets
@@ -63,8 +66,11 @@ def addWord():
 		return render_template('newword.html')
 	if not definition:
 		return render_template('newword.html')
-	# Add more validations here later. 
-	newWord = Word(word=word, definition=definition)
+	# Add more validations here later.
+	# . . .
+	# Get current date/time in ISO format: 
+	current_date = datetime.now().isoformat()
+	newWord = Word(word=word, definition=definition, entry_date=current_date)
 	session.add(newWord)
 	session.commit()
 	return render_template('home.html')
@@ -106,6 +112,16 @@ def deleteWord(word_id):
 	session.delete(word_object)
 	session.commit()
 	return redirect(url_for('allWords'))
+
+@app.route('/stats/')
+def stats():
+	today = date.today()
+	words_today = session.query(Word).filter(Word.entry_date >= today).count()
+	words_week = session.query(Word).filter(Word.entry_date >= today - (timedelta(days=7))).count()
+	words_month = session.query(Word).filter(Word.entry_date >= today - (timedelta(days=30))).count()
+	words_all = session.query(Word).count()
+	return render_template('stats.html', words_today=words_today, words_week=words_week, words_month=words_month, words_all=words_all)
+
 
 # @app.route('/')
 # @app.route('/home/')

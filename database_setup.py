@@ -4,7 +4,7 @@ import os
 import sys
 from hashlib import sha256
 from sqlalchemy import create_engine
-from sqlalchemy import Column, ForeignKey, Integer, String, Boolean
+from sqlalchemy import Column, ForeignKey, Integer, String, Boolean, DateTime
 from sqlalchemy.orm import relationship
 from sqlalchemy.ext.declarative import declarative_base
 # Creating the base class - to be used to define any number of
@@ -34,7 +34,7 @@ class Word(Base):
 	id = Column(Integer, primary_key=True)
 	word = Column(String(250), nullable=False)
 	definition = Column(String(250), nullable=False)
-	#entry_date = Column(DateTime, nullable=False)
+	entry_date = Column(DateTime, nullable=False)
 
 # class User(Base):
 # 	__tablename__ = 'user'
