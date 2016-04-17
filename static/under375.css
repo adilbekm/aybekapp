@@ -58,8 +58,20 @@ a, a:link, a:visited, a:active {
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 200;
+    font-size: 1.1em;
     padding: 1em;
     background-color: rgb(255,255,255);
+    display: flex;
+}
+
+.left, .right {
+    width: 50%;
+    text-align: left;
+}
+
+.right {
+    width: 50%;
+    text-align: right;
 }
 
 /*
