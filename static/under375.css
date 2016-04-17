@@ -1,0 +1,57 @@
+/* Stripping off default margin and padding */ 
+html, ul {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    /* font-size: 1em; */
+    padding: 0;
+    margin: 0 auto; /* to center all content */
+    background: rgb(172,251,172);
+}
+/* To contain floating elements (when they exceed min-height of 500px) */
+body:after {
+    content:"";
+    display: block;
+    clear: both;
+}
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+    /* color: rgb(10,10,10); */
+    /* color: #0000ff; */
+}
+.wordListing a {
+    color: #000000;
+}
+
+.button {
+    display: block;
+    text-align: center;
+    padding-top: 1em;
+    padding-right: 0.25em;
+    padding-bottom: 1em;
+    padding-left: 0.25em;
+    margin-top: 1em;
+    margin-right: auto;
+    margin-bottom: 0em;
+    margin-left: auto;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .85em;
+    border-radius: .307692308em;
+    background: #02b3e4;
+    max-width: 18em;
+    width: 100%;
+    border: none;
+    transition: background .3s ease;
+}
+
+/*
+a:hover, .navigation a:hover {
+    color: #ff0000;
+    text-decoration: underline;
+}
+*/

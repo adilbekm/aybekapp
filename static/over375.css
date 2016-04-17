@@ -5,10 +5,10 @@ html, ul {
 }
 body {
     font-family: Arial, sans-serif;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 0;
     margin: 0 auto; /* to center all content */
-    background: rgb(255,255,255);
+    background: rgb(200,200,200);
 }
 /* To contain floating elements (when they exceed min-height of 500px) */
 body:after {
