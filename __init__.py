@@ -78,7 +78,7 @@ def addWord():
 	newWord = Word(word=word, definition=definition, entry_date=current_date)
 	session.add(newWord)
 	session.commit()
-	return render_template('home.html')
+	return redirect(url_for('allWords'))
 
 @app.route('/allwords/')
 def allWords():
