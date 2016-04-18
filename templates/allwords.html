@@ -15,9 +15,11 @@
 
 	<div class='contain-body'>
 		{% for word in words %}
+		<a href='{{url_for('editWord',word_id=word.id)}}'>
 		<div class='word-block'>
-			<a href='{{url_for('editWord',word_id=word.id)}}'><div class='word'>{{word.word}}</div> {{word.definition}}</a>
+			<div class='word'>{{word.word}}</div> {{word.definition}}
 		</div>
+		</a>
 		{% endfor %}
 	</div>
 </div>
