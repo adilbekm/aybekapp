@@ -90,6 +90,21 @@ a, a:link, a:visited, a:active {
     margin: 1em;   
 }
 
+#title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.stats {
+    display: flex;
+    padding-top: 0.5em;
+    padding-right: 2em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    font-size: 1.25em;
+}
+
 .left {
     width: 50%;
     text-align: left;

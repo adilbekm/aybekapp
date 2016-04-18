@@ -3,14 +3,33 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aybek Words</title>
-	<link rel='stylesheet' type='text/css' href='{{url_for('static', filename='styles.css')}}'>
+	<link rel='stylesheet' type='text/css' media='screen and (max-width:375px)' href='{{url_for('static', filename='under375.css')}}'>
+	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
-	<p>Page for showing progress.</p>
-	<p>Words learned today: {{words_today}}</p>
-	<p>Words learned in a week: {{words_week}}</p>
-	<p>Words learned in a month: {{words_month}}</p>
-	<p>Total words learned: {{words_all}}</p>
-	<p><a href='{{url_for('home')}}'>Home</a></p>
+	<div class='contain-top'>
+		<div class='left'>Aybek Words</div>
+		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
+	</div>
+
+	<div class='contain-body'>
+		<div id='title'>Words Learned</div>
+		<div class='stats'>
+			<div class='left'>Today:</div>
+			<div class='right'>{{words_today}}</div>
+		</div>
+		<div class='stats'>
+			<div class='left'>7 days:</div>
+			<div class='right'>{{words_week}}</div>
+		</div>
+		<div class='stats'>
+			<div class='left'>30 days:</div>
+			<div class='right'>{{words_month}}</div>
+		</div>
+		<div class='stats'>
+			<div class='left'>Lifetime:</div>
+			<div class='right'>{{words_all}}</div>
+		</div>
+	</div>
 </body>
 </html>
