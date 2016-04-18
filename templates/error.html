@@ -11,13 +11,9 @@
 		<div class='left'>Aybek Words</div>
 		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
 	</div>
-	
-	<form method='POST' action ='.'>
-		<label for='word'>Word</label>
-		<input type='text' name='word' class='form-control' placeholder='Word'><br>
-		<label for='definition'>Definition</label>
-		<input type='text' name='definition' class='form-control' placeholder='Definition'><br>
-		<button type='submit' class='button save-delete'>Save</button>
-	</form>
+
+	<div class='contain-body'>
+		<p>An error has occurred. This is usually happens if you haven't entered values in both fields (the word and it's definition) or you entered values that are too big (more than 250 characters).</p>
+	</div>
 </body>
 </html>

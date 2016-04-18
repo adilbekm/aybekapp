@@ -23,6 +23,8 @@ body:after {
 }
 a, a:link, a:visited, a:active {
     text-decoration: none;
+    padding-left: 0;
+    padding-right: 0;
     /* color: rgb(10,10,10); */
     /* color: #0000ff; */
 }
@@ -71,6 +73,10 @@ a, a:link, a:visited, a:active {
     width: 100%;
     border: none;
     transition: background .3s ease;
+}
+
+.save-delete {
+    margin-top: 1em;
 }
 
 .contain-top {
@@ -138,7 +144,7 @@ form {
     margin-right: auto;
     margin-bottom: 1em;
     margin-left: auto;
-    font-size: 15px;
+    font-size: 1em;
     line-height: 1.7;
     color: #2e3d49;
     background-color: #ffffff;

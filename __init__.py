@@ -66,10 +66,11 @@ def addWord():
 	word = request.form['word'].strip()
 	definition = request.form['definition'].strip()
 	# Check if values are empty:
-	if not word: 
-		return render_template('newword.html')
-	if not definition:
-		return render_template('newword.html')
+	if not word or not definition: 
+		return render_template('error.html')
+	# Check if values are too long:
+	if len(word)>250 or len(definition)>250:
+		return render_template('error.html')
 	# Add more validations here later.
 	# . . .
 	# Get current date/time in ISO format: 
@@ -99,16 +100,18 @@ def editWord(word_id):
 	new_word = request.form['word'].strip()
 	new_definition = request.form['definition'].strip()
 	# Check if values are empty:
-	if not new_word: 
-		return render_template('newword.html')
-	if not new_definition:
-		return render_template('newword.html')
+	if not new_word or not new_definition: 
+		return render_template('error.html')
+	# Check if values are too long:
+	if len(new_word)>250 or len(new_definition)>250:
+		return render_template('error.html')
 	# Add more validations here later. 
+	# . . .
 	word_object.word = new_word
 	word_object.definition = new_definition
 	session.add(word_object)
 	session.commit()
-	return render_template('home.html')
+	return redirect(url_for('allWords'))
 
 @app.route('/allwords/<int:word_id>/delete/')
 def deleteWord(word_id):

@@ -3,10 +3,17 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aybek Words</title>
-	<link rel='stylesheet' type='text/css' href='{{url_for('static', filename='styles.css')}}'>
+	<link rel='stylesheet' type='text/css' media='screen and (max-width:375px)' href='{{url_for('static', filename='under375.css')}}'>
+	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
-	<p>Page for testing words.</p>
-	<p><a href='{{url_for('home')}}'>Home</a></p>
+	<div class='contain-top'>
+		<div class='left'>Aybek Words</div>
+		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
+	</div>
+
+	<div class='contain-body'>
+		<p>This feature is under construction. When complete, this page will let you test yourself on how well you are learning your words.</p>
+	</div>
 </body>
 </html>
