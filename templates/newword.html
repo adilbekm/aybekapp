@@ -3,17 +3,21 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aybek Words</title>
-	<link rel='stylesheet' type='text/css' href='{{url_for('static', filename='styles.css')}}'>
+	<link rel='stylesheet' type='text/css' media='screen and (max-width:375px)' href='{{url_for('static', filename='under375.css')}}'>
+	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
-	<p>Page for adding a new word.</p>
+	<div class='contain'>
+		<div class='left'>Aybek Words</div>
+		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
+	</div>
 	
 	<form method='POST' action ='.'>
-	<input type='text' name='word' size='25' autofocus><br>
-	<input type='text' name='definition' size='25'><br>
-	<input type='submit' value='Save'>
+		<label for='word'>Word</label>
+		<input type='text' name='word' class='form-control' placeholder='Word'><br>
+		<label for='definition'>Definition</label>
+		<input type='text' name='definition' class='form-control' placeholder='Definition'><br>
+		<input type='submit' class='button' value='Save'>
 	</form>
-	
-	<p><a href='{{url_for('home')}}'>Home</a></p>
 </body>
 </html>

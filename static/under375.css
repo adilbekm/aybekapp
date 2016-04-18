@@ -37,9 +37,9 @@ a, a:link, a:visited, a:active {
     padding-right: 0.25em;
     padding-bottom: 1em;
     padding-left: 0.25em;
-    margin-top: 1.25em;
+    margin-top: 1.75em;
     margin-right: auto;
-    margin-bottom: 0em;
+    margin-bottom: -0.25em;
     margin-left: auto;
     color: white;
     text-decoration: none;
@@ -64,7 +64,7 @@ a, a:link, a:visited, a:active {
     display: flex;
 }
 
-.left, .right {
+.left {
     width: 50%;
     text-align: left;
 }
@@ -72,6 +72,47 @@ a, a:link, a:visited, a:active {
 .right {
     width: 50%;
     text-align: right;
+}
+
+.right a {
+    color: rgb(0,0,0);
+}
+
+form {
+    margin-top: 20px;
+    margin-right: 5px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+}
+
+.form-control {
+    display: block;
+    width: 90%;
+    height: 2em;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    margin-top: 0.5em;
+    margin-right: auto;
+    margin-bottom: 1em;
+    margin-left: auto;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #2e3d49;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid #dbe2e8;
+    border-radius: 2px;
+    box-shadow: 0 0.25em 0.5em 0 rgba(46, 61, 73, 0.12);
+    transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+label {
+    padding: 7px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: 1em;
 }
 
 /*
