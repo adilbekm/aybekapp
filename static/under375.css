@@ -64,6 +64,13 @@ a, a:link, a:visited, a:active {
     display: flex;
 }
 
+.contain-about {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    font-size: 1.1em;
+    padding: 1em;   
+}
+
 .left {
     width: 50%;
     text-align: left;
@@ -104,8 +111,6 @@ form {
     background-image: none;
     border: 1px solid #dbe2e8;
     border-radius: 2px;
-    box-shadow: 0 0.25em 0.5em 0 rgba(46, 61, 73, 0.12);
-    transition: box-shadow 0.3s ease, border 0.3s ease;
 }
 
 label {

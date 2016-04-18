@@ -9,11 +9,12 @@
 <body>
 	<div class='contain'>
 		<div class='left'>Aybek Words</div>
-		<div class='right'><a href='{{url_for('about')}}'>About</a></div>
+		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
 	</div>
-	<a href='{{url_for('addWord')}}' class='button'>Add New Word</a>
-	<a href='{{url_for('allWords')}}' class='button'>See Vocabulary</a>
-	<a href='{{url_for('testWords')}}' class='button'>Test Vocabulary</a>
-	<a href='{{url_for('stats')}}' class='button'>Statistics</a>
+
+	<div class='contain-about'>
+		<p>This quick web application is built and designed for Aybek to keep track of English words he learns every day.</p>
+		<p>If you learn just 10 new words every day, you will learn 3,650 words after a year!</p>
+	</div>
 </body>
 </html>
