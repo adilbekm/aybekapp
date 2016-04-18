@@ -2,34 +2,41 @@
 html, ul {
     margin: 0;
     padding: 0;
+    height: 100%;
 }
+
 body {
     font-family: Arial, sans-serif;
     /* font-size: 1em; */
     padding: 0;
     margin: 0 auto; /* to center all content */
-    background: url('images/bg_pattern_1.svg');
-    background-color: rgb(233,233,225);
-    background-size: 150%;
-    background-position-x: 50%;
-    background-position-y: 50%; 
-    /* rgb(172,251,172); */
+    height: 100%;
+    /* background: url('images/bg_pattern_1.svg'); */
 }
+
 /* To contain floating elements (when they exceed min-height of 500px) */
 body:after {
     content:"";
     display: block;
     clear: both;
 }
+
 a, a:link, a:visited, a:active {
     text-decoration: none;
     padding-left: 0;
     padding-right: 0;
-    /* color: rgb(10,10,10); */
-    /* color: #0000ff; */
 }
+
 .word-block a {
     color: #000000;
+}
+
+.container {
+    max-width: 700px;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(233,233,225);
 }
 
 .word-block {
@@ -159,10 +166,3 @@ label {
     font-weight: 200;
     font-size: 1em;
 }
-
-/*
-a:hover, .navigation a:hover {
-    color: #ff0000;
-    text-decoration: underline;
-}
-*/

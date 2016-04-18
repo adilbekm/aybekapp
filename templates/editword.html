@@ -7,6 +7,7 @@
 	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
+<div class='container'>
 	<div class='contain-top'>
 		<div class='left'>Aybek Words</div>
 		<div class='right'><a href='{{url_for('allWords')}}'>Vocab</a></div>
@@ -21,5 +22,6 @@
 	</form>
 	
 	<a href='{{url_for('deleteWord',word_id=word_id)}}' class='button'>Delete</a>
+</div>
 </body>
 </html>

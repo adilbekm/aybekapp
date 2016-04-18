@@ -7,13 +7,15 @@
 	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
+<div class='container'>
 	<div class='contain-top'>
 		<div class='left'>Aybek Words</div>
 		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
 	</div>
 
 	<div class='contain-body'>
-		<p>An error has occurred. This is usually happens if you haven't entered values in both fields (the word and it's definition) or you entered values that are too big (more than 250 characters).</p>
+		<p>An error has occurred. This happens if you haven't entered values in both fields (the word and it's definition) or you have entered values that are too long (more than 250 characters long).</p>
 	</div>
+</div>
 </body>
 </html>
