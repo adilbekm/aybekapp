@@ -27,7 +27,7 @@ a, a:link, a:visited, a:active {
     padding-right: 0;
 }
 
-.word-block a {
+.contain-body a {
     color: #000000;
 }
 
@@ -48,7 +48,7 @@ a, a:link, a:visited, a:active {
     padding-left: 5px;
     margin-top: 5px;
     margin-right: -2px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     margin-left: -2px;
     min-height: 2.5em;
     background-color: rgb(255,255,255);
