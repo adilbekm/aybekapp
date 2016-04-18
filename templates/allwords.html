@@ -3,15 +3,21 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aybek Words</title>
-	<link rel='stylesheet' type='text/css' href='{{url_for('static', filename='styles.css')}}'>
+	<link rel='stylesheet' type='text/css' media='screen and (max-width:375px)' href='{{url_for('static', filename='under375.css')}}'>
+	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
 </head>
 <body>
-	<p>Page for listing all words.</p>
-	{% for word in words %}
-	<ul class="wordListing">
-		<li><a href='{{url_for('editWord',word_id=word.id)}}'><span style="font-weight:bold">{{word.word}}:</span> {{word.definition}}</li></a>
-	</ul>
-	{% endfor %}
-	<p><a href='{{url_for('home')}}'>Home</a></p>
+	<div class='contain-top'>
+		<div class='left'>Aybek Words</div>
+		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
+	</div>
+
+	<div class='contain-body'>
+		{% for word in words %}
+		<div class='word-block'>
+			<a href='{{url_for('editWord',word_id=word.id)}}'><div class='word'>{{word.word}}</div> {{word.definition}}</a>
+		</div>
+		{% endfor %}
+	</div>
 </body>
 </html>

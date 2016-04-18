@@ -26,8 +26,27 @@ a, a:link, a:visited, a:active {
     /* color: rgb(10,10,10); */
     /* color: #0000ff; */
 }
-.wordListing a {
+.word-block a {
     color: #000000;
+}
+
+.word-block {
+    border: 1px solid #dbe2e8;
+    border-radius: 4px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-top: 5px;
+    margin-right: -2px;
+    margin-bottom: 5px;
+    margin-left: -2px;
+    min-height: 2.5em;
+    background-color: rgb(255,255,255);
+}
+
+.word {
+    font-weight: 500;
 }
 
 .button {
@@ -54,7 +73,7 @@ a, a:link, a:visited, a:active {
     transition: background .3s ease;
 }
 
-.contain {
+.contain-top {
     font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-weight: 200;
@@ -64,7 +83,7 @@ a, a:link, a:visited, a:active {
     display: flex;
 }
 
-.contain-about {
+.contain-body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 200;
     font-size: 1.1em;
