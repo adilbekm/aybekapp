@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<title>Aybek Words</title>
-	<link rel='stylesheet' type='text/css' media='screen and (max-width:375px)' href='{{url_for('static', filename='under375.css')}}'>
-	<link rel='stylesheet' media='screen and (min-width:376px)' href='{{url_for('static', filename='over375.css')}}'>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='normalize.css')}}">
+	<link rel="stylesheet" type="text/css" media="screen and (max-width:375px)" href="{{url_for('static', filename='under375.css')}}">
+	<link rel="stylesheet" media="screen and (min-width:376px)" href="{{url_for('static', filename='over375.css')}}">
+	<script type="text/javascript" src="{{url_for('static', filename='jquery.js')}}"></script>
 </head>
 <body>
-<div class='container'>
-	<div class='contain-top'>
-		<div class='left'>Aybek Words</div>
-		<div class='right'><a href='{{url_for('home')}}'>Home</a></div>
+<div class="container">
+	<div class="contain-top">
+		<div class="left">Aybek Words</div>
+		<div class="right"><a href="{{url_for('home')}}">Home</a></div>
 	</div>
 
-	<div class='contain-body'>
+	<div class="contain-body">
 		<p>This quick web application is built and designed for Aybek to keep track of English words he learns every day.</p>
 		<p>If you learn just 10 words every day, you will learn 3,650 words in one year!</p>
 	</div>
 </div>
+<script type="text/javascript" src="{{url_for('static', filename='test.js')}}"></script>
 </body>
 </html>
